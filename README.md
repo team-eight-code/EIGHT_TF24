@@ -25,7 +25,7 @@ This project is an intelligent chatbot interface designed to identify potential 
 ## Installation:
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-repository-link
+   git clone https://github.com/team-eight-code/EIGHT_TF24.git
    ```
 2. Navigate to the project directory:
    ```bash
