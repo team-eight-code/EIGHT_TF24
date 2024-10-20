@@ -1,0 +1,13 @@
+requests
+jsonify
+pipeline
+pytorch
+Flask
+flask CORS
+transforms
+traceback 
+autopep8
+subprocess
+tempfile
+difflib
+time
