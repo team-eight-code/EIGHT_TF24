@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Code Vulnerability Checker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar-toggle">
+        <button id="toggleSidebar" class="toggle-button">☰</button>
+    </div>
+    <div class="container">
+        <div class="chat-history" id="chatHistory">
+            <button class="new-conversation">+ New Conversation</button>
+            <div class="conversation-list">
+                <button class="conversation" id="conversation1">Conversation 1</button>
+                <!-- New conversations will be dynamically added here -->
+            </div>
+            <div class="messages" id="messages">
+                <!-- Chat history for the active conversation will be loaded here -->
+            </div>
+        </div>
+        <div class="main-content">
+            <header>
+                <h1>Intelligent Code Vulnerability Checker</h1>
+                <div class="dark-mode-container">
+                    <span id="modeText" class="mode-text">Light Mode</span>
+                    <button id="darkModeToggle" class="dark-mode-toggle">🌞</button>
+                </div>
+            </header>
+            <div class="output-section">
+                <h2>Analysis Results:</h2>
+                <div id="results"></div>
+                <div id="correctedCodeSection" style="display: none;">
+                    <h3>Corrected Code:</h3>
+                    <pre><code id="correctedCode"></code></pre>
+                    <button id="copyCodeButton">Copy Corrected Code</button>
+                </div>
+            </div>
+            <div class="input-section">
+                <div class="analysis-options">
+                    <div class="analysis-type">
+                        <select id="analysisType">
+                            <option disabled selected hidden>Select Analysis Type</option>
+                            <option value="code">Code Snippet</option>
+                            <option value="github">GitHub Repository</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="input-heading">
+                    <label for="codeInput">Enter Your Code:</label>
+                </div>
+                <textarea id="codeInput" placeholder="Paste your code here..." rows="10"></textarea>
+                
+                <div id="githubInputContainer" class="github-input" style="display: none;">
+                    <label for="githubInput">Enter GitHub Repository URL:</label>
+                    <input type="text" id="githubInput" placeholder="https://github.com/user/repo">
+                </div>
+                
+                <div class="analyze-container">
+                    <button id="analyzeButton" class="analyze-button">Analyze Vulnerabilities</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
